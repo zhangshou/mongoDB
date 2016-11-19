@@ -21,5 +21,5 @@ var persons = {
     }
 };
 persons.skip(6).sort({age:-1}).limit(3).exec(function(err,result){
-    console.log(result);// [4,3,2]
+    console.log(result);//[ { age: 4 }, { age: 3 }, { age: 2 } ]
 });
