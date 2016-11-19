@@ -25,17 +25,31 @@ PersonModel.create(persons).then(function (result) {
 });
 
 //findOne 如果符合条件的数据有多条,只返回第一条
-PersonModel.findOne({age:5}, function (err,result) {
-    console.log(result);
-});
+//PersonModel.findOne({age:5}, function (err,result) {
+//    console.log(result);
+//});
 //属性过滤
-PersonModel.find({name:'zhoushou1'},{age:0}, function (err,result) {
-    console.log(result);
-});
+//PersonModel.find({name:'zhoushou1'},{age:0}, function (err,result) {
+//    console.log(result);
+//});
 //findById(按ID单条数据)
-PersonModel.findById('582fdcf88916f8401821e0ca', function (err,result) {
+//PersonModel.findById('582fdcf88916f8401821e0ca', function (err,result) {
+//    console.log(result);
+//});
+
+//高级查询  limit()限定查询的条数
+//PersonModel.find().limit(3).exec(function (err,result) {
+//    console.log(result);
+//});
+//sort({age:-1})排序 /{age:-1}倒序
+//PersonModel.find().sort({age:-1}).limit(3).exec(function (err,result) {
+//    console.log(result);
+//});
+//skip()跳过查询
+//PersonModel.find().sort({age:-1}).limit(3).skip(3).exec(function (err,result) {
+//    console.log(result);
+//});
+
+PersonModel.find().sort({age:-1}).skip(6).limit(3).exec(function (err,result) {
     console.log(result);
 });
-
-
-
